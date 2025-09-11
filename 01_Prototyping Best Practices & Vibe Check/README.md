@@ -38,24 +38,24 @@ Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner. 
     - Aspect Tested:
-        ✅ Am I getting a response?
-        ✅ Does the answer make sense?
-        ✅ Is the answer correctly formatted?
-        ✅ Does the answer meet the correct tone (70s / 80s)?
+        - Am I getting a response? ✅ 
+        - Does the answer make sense? ✅
+        - Is the answer correctly formatted? ✅
+        - Does the answer meet the correct tone (70s / 80s)? ✅
 2. Read the following paragraph and provide a concise summary of the key points…
     - Aspect Tested:
-        ✅ Does the summary make sense and does it provide the key points?
+        - Does the summary make sense and does it provide the key points? ✅
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
     - Aspect Tested:
-        ✅ Does the story make sense?
-        ✅ Is the word count between 100 and 150?
+        - Does the story make sense? ✅
+        - Is the word count between 100 and 150? ✅
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
     - Aspect Tested:
-        ✅ Is the answer correct?
-        ✅ Does is show how it was thinking?
+        - Is the answer correct? ✅
+        - Does is show how it was thinking? ✅
 5. Rewrite the following paragraph in a professional, formal tone…
     - Aspect Tested:
-        ❌ Is the paragraph rewritten in a professional tone? No, it kept its "groovy, 70s style" tone. Only after I asked it not to answer in that 70s tone it answered in a formal, professional tone
+        - Is the paragraph rewritten in a professional tone? ❌ No, it kept its "groovy, 70s style" tone. Only after I asked it not to answer in that 70s tone it answered in a formal, professional tone.
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
 
