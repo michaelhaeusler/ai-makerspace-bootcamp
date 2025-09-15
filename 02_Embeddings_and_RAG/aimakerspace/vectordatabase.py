@@ -165,12 +165,19 @@ class VectorDatabase:
         # Start timing the search operation
         start_time = time.time()
 
-        # Calculate scores for all vectors, sort them by similarity in descending order and return the top k results
+        # Calculate scores for all vectors
         scores = [
             (key, distance_measure(query_vector, vector))
             for key, vector in self.vectors.items()
         ]
-        results = sorted(scores, key=lambda x: x[1], reverse=True)[:k]
+
+        # Sort based on metric type
+        if distance_measure in [euclidean_distance, manhattan_distance]:
+            # Distance metrics: lower is better
+            results = sorted(scores, key=lambda x: x[1], reverse=False)[:k]
+        else:
+            # Similarity metrics: higher is better
+            results = sorted(scores, key=lambda x: x[1], reverse=True)[:k]
 
         # Log search completion and performance metrics
         if self.enable_logging:
@@ -472,16 +479,17 @@ class VectorDatabase:
             return "[VERY POOR] Very poor match"
 
     def _evaluate_dot_product_score(self, score: float) -> str:
-        """Evaluate dot product score quality for 1536-dimensional embeddings."""
-        if score >= 0.6:
+        """Evaluate dot product score quality for normalized embeddings (same as cosine)."""
+        # For normalized vectors, dot product = cosine similarity
+        if score >= 0.9:
             return "[EXCELLENT] Perfect match"
-        elif score >= 0.4:
+        elif score >= 0.8:
             return "[VERY GOOD] Very good match"
-        elif score >= 0.2:
+        elif score >= 0.7:
             return "[GOOD] Good match"
-        elif score >= 0.1:
+        elif score >= 0.6:
             return "[MODERATE] Moderate match"
-        elif score >= 0.0:
+        elif score >= 0.5:
             return "[POOR] Poor match"
         else:
             return "[VERY POOR] Very poor match"
