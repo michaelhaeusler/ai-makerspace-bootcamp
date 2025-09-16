@@ -59,6 +59,7 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 
 What are some limitations of vibe checking as an evaluation tool?
 ##### ✅ Answer:
+Vibe Checking is only a very simple and quick test to see if your app is working as intended. It is ok for prototypes but for production apps there hat to be done much more intense testing: testing for edge cases, stress testing (trying to break the app), security testing etc. Ideally, these tests should be performed by someone other than the developer, as the latter tends to be “blinded by routine” or to go easy on their app.
 
 ### 🚧 Advanced Build (OPTIONAL):
 
@@ -68,14 +69,10 @@ Please make adjustments to your application that you believe will improve the vi
 
 #### 🏗️ Activity #1
 ##### Adjustments Made:
-- _describe adjustment(s) here_
+Originally there was a textarea where the user could adjust the developer message. This should not be the case - the user should not be able to change the developer message directly. Instead I implemented an "personality-intensity-slider". This slider allows you to change the intensity of the 70s or 80s tone - in four stages from neutral to extreme.
 
 ##### Results:
-1. _Comment here how the change(s) impacted the vibe check of your system_
-2. 
-3. 
-4. 
-5.
+1. You now have the ability to change the intensity of the 70s or 80s vibe
 
 
 ## Submitting Your Homework
