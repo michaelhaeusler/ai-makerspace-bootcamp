@@ -7,7 +7,7 @@ import type { PolicyUploadResponse, PolicyOverview } from '@/types';
 
 export default function Home() {
   const [uploadedPolicy, setUploadedPolicy] = useState<PolicyOverview | null>(null);
-  
+
   const handleUploadComplete = (result: PolicyUploadResponse) => {
     // Convert upload response to policy overview format
     const policyOverview: PolicyOverview = {
@@ -26,13 +26,13 @@ export default function Home() {
         page_number: typeof highlight === 'object' && highlight && 'page_number' in highlight && typeof highlight.page_number === 'number' ? highlight.page_number : undefined,
       })),
     };
-    
+
     setUploadedPolicy(policyOverview);
   };
 
   const handleAskQuestion = async (question: string) => {
     if (!uploadedPolicy) return;
-    
+
     console.log('Asking question:', question, 'for policy:', uploadedPolicy.policy_id);
     // TODO: Implement actual question handling with backend API
     // This will be connected to the backend in the next phase
@@ -51,13 +51,13 @@ export default function Home() {
               Willkommen bei InsuranceLens
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Laden Sie Ihre deutsche Krankenversicherungs-Police hoch und erhalten Sie 
+              Laden Sie Ihre deutsche Krankenversicherungs-Police hoch und erhalten Sie
               eine KI-gestützte Analyse mit personalisierten Antworten auf Ihre Fragen.
             </p>
           </div>
-          
+
           <FileUpload onUploadComplete={handleUploadComplete} />
-          
+
           <div className="bg-blue-50 rounded-lg p-6 max-w-4xl mx-auto">
             <h2 className="text-xl font-semibold text-blue-900 mb-4">
               Was macht InsuranceLens?
@@ -112,9 +112,9 @@ export default function Home() {
               Neue Police hochladen
             </button>
           </div>
-          
-          <PolicyTabs 
-            policy={uploadedPolicy} 
+
+          <PolicyTabs
+            policy={uploadedPolicy}
             onAskQuestion={handleAskQuestion}
           />
         </div>

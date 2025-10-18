@@ -33,7 +33,7 @@ export default function FileUpload({ onUploadComplete }: FileUploadProps) {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     const files = e.dataTransfer.files;
     if (files && files[0]) {
       handleFile(files[0]);
@@ -53,7 +53,7 @@ export default function FileUpload({ onUploadComplete }: FileUploadProps) {
 
     setError(null);
     setUploading(true);
-    
+
     try {
       setProgress({
         stage: 'uploading',
@@ -85,7 +85,7 @@ export default function FileUpload({ onUploadComplete }: FileUploadProps) {
       });
 
       onUploadComplete(result);
-      
+
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'Upload fehlgeschlagen';
       setError(errorMessage);
@@ -109,13 +109,12 @@ export default function FileUpload({ onUploadComplete }: FileUploadProps) {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div
-        className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-          dragActive
-            ? 'border-blue-400 bg-blue-50'
-            : error
+        className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-colors ${dragActive
+          ? 'border-blue-400 bg-blue-50'
+          : error
             ? 'border-red-300 bg-red-50'
             : 'border-gray-300 bg-white hover:border-gray-400'
-        }`}
+          }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
         onDragOver={handleDrag}

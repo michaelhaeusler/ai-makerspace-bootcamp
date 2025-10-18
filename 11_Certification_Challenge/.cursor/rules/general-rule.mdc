@@ -6,6 +6,7 @@ alwaysApply: true
 ## Rules to Follow
 
 ### Core Development Practices
+- Always remember that I am a Python beginner and want to learn it. So always go slowly and explain what you are doing.
 - You must always commit your changes whenever you update code
 - You must keep commit messages short, clean, and focused on important changes
 - Commit messages should be precise and simple, not verbose

@@ -36,13 +36,14 @@ InsuranceLens is an intelligent assistant that helps users understand their Germ
    cd backend
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies** (creates `.venv` automatically):
    ```bash
-   # Using pip
-   pip install -r requirements.txt
-   
-   # OR using uv (recommended)
+   # Recommended: Modern uv approach
    uv sync
+   
+   # Alternative: If you don't have uv installed
+   pip install --upgrade pip
+   pip install fastapi "uvicorn[standard]" openai langchain langchain-openai langgraph langsmith qdrant-client tiktoken pypdf pymupdf tavily-python python-multipart python-dotenv pydantic httpx tenacity pytest pytest-asyncio black isort mypy
    ```
 
 3. **Environment setup**:
@@ -56,13 +57,12 @@ InsuranceLens is an intelligent assistant that helps users understand their Germ
    docker run -p 6333:6333 qdrant/qdrant
    ```
 
-5. **Run the backend**:
+5. **Run the backend** (auto-runs in virtual environment):
    ```bash
-   # Using uvicorn directly
-   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
    
-   # OR using the main module
-   python -m app.main
+   # OR run the main module
+   uv run python -m app.main
    ```
 
 ### Frontend Setup
@@ -97,6 +97,7 @@ InsuranceLens is an intelligent assistant that helps users understand their Germ
 
 ```
 ├── backend/                    # Python FastAPI backend
+│   ├── .venv/                 # Virtual environment (auto-created by uv)
 │   ├── app/
 │   │   ├── core/              # Configuration and settings
 │   │   ├── models/            # Pydantic schemas
@@ -104,7 +105,8 @@ InsuranceLens is an intelligent assistant that helps users understand their Germ
 │   │   ├── services/          # Business logic
 │   │   └── agents/            # LangGraph agents
 │   ├── tests/                 # Backend tests
-│   └── pyproject.toml         # Dependencies
+│   ├── pyproject.toml         # Modern Python project config
+│   └── uv.lock               # Exact dependency versions
 ├── frontend/                  # Next.js frontend
 │   ├── src/
 │   │   ├── app/              # Next.js app router
@@ -174,15 +176,21 @@ NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
 ```bash
 cd backend
 
-# Run tests
-pytest
+# Run tests (in virtual environment)
+uv run pytest
 
 # Code formatting
-black app/
-isort app/
+uv run black app/
+uv run isort app/
 
 # Type checking
-mypy app/
+uv run mypy app/
+
+# Add new dependencies
+uv add package-name
+
+# Add development dependencies  
+uv add --dev package-name
 ```
 
 ### Frontend Development

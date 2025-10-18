@@ -20,7 +20,7 @@ class ApiError extends Error {
 
 async function fetchApi(endpoint: string, options: RequestInit = {}) {
   const url = `${API_BASE_URL}${endpoint}`;
-  
+
   const response = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
@@ -34,11 +34,11 @@ async function fetchApi(endpoint: string, options: RequestInit = {}) {
     try {
       const errorData = await response.json();
       errorMessage = errorData.detail || errorData.error || errorMessage;
-      } catch (parseError) {
-        // If can't parse error, use status text  
-        console.warn('Failed to parse error response:', parseError);
-        errorMessage = response.statusText || errorMessage;
-      }
+    } catch (parseError) {
+      // If can't parse error, use status text  
+      console.warn('Failed to parse error response:', parseError);
+      errorMessage = response.statusText || errorMessage;
+    }
     throw new ApiError(response.status, errorMessage);
   }
 
@@ -59,7 +59,7 @@ export const api = {
     // Use XMLHttpRequest for progress tracking
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
-      
+
       xhr.upload.addEventListener('progress', (event) => {
         if (event.lengthComputable && onProgress) {
           const progress = (event.loaded / event.total) * 100;

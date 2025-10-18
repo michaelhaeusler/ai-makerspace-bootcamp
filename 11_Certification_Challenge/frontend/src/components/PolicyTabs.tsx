@@ -49,7 +49,7 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg p-6 shadow-sm border">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Schnellzugriff
@@ -116,7 +116,7 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
               Diese Klauseln weichen von typischen Branchenstandards ab und verdienen besondere Aufmerksamkeit.
             </p>
           </div>
-          
+
           {policy.highlighted_clauses.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
               <AlertTriangle className="w-12 h-12 mx-auto mb-4 text-gray-300" />
@@ -126,8 +126,8 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
           ) : (
             <div className="space-y-4">
               {policy.highlighted_clauses.map((clause) => (
-                <div 
-                  key={clause.clause_id} 
+                <div
+                  key={clause.clause_id}
                   className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
                   data-testid={`highlighted-clause-${clause.clause_id}`}
                 >
@@ -137,7 +137,7 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
                       {clause.category}
                     </span>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div>
                       <h5 className="text-sm font-medium text-gray-700 mb-1">Klauseltext:</h5>
@@ -145,17 +145,17 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
                         {clause.text}
                       </p>
                     </div>
-                    
+
                     <div>
                       <h5 className="text-sm font-medium text-gray-700 mb-1">Warum markiert?</h5>
                       <p className="text-sm text-gray-600">{clause.reason}</p>
                     </div>
-                    
+
                     <div>
                       <h5 className="text-sm font-medium text-gray-700 mb-1">Vergleich mit Branchenstandard:</h5>
                       <p className="text-sm text-gray-600">{clause.norm_comparison}</p>
                     </div>
-                    
+
                     {clause.page_number && (
                       <div className="text-xs text-gray-500">
                         Seite {clause.page_number} im Original-Dokument
@@ -185,7 +185,7 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
               Stellen Sie spezifische Fragen zu Ihrer Police oder allgemeine Fragen zur Krankenversicherung.
             </p>
           </div>
-          
+
           <div className="bg-white rounded-lg p-6 shadow-sm border">
             <div className="space-y-4">
               <div>
@@ -218,7 +218,7 @@ export default function PolicyTabs({ policy, onAskQuestion }: PolicyTabsProps) {
               </button>
             </div>
           </div>
-          
+
           {/* Question history would go here */}
           <div className="text-center py-8 text-gray-500">
             <MessageCircle className="w-12 h-12 mx-auto mb-4 text-gray-300" />

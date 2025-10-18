@@ -2,15 +2,14 @@
 
 ## Quick Start Commands
 
-### 1. Backend Setup
+### 1. Backend Setup (Modern uv + .venv)
 ```bash
 cd backend
 
-# Install Python dependencies
-pip install -r requirements.txt
-# OR with uv: uv sync
+# Install Python dependencies (creates .venv automatically)
+uv sync
 
-# Start Qdrant database
+# Start Qdrant database  
 docker run -p 6333:6333 qdrant/qdrant
 
 # Copy environment file
@@ -19,8 +18,8 @@ cp .env.example .env
 # - OPENAI_API_KEY=your_key_here
 # - TAVILY_API_KEY=your_key_here
 
-# Start backend
-uvicorn app.main:app --reload
+# Start backend (runs in virtual environment automatically)
+uv run uvicorn app.main:app --reload
 ```
 
 ### 2. Frontend Setup

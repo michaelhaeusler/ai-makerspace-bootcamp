@@ -76,7 +76,7 @@
       "category": "territorial"
     },
     {
-      "id": "claim_notification_period", 
+      "id": "claim_notification_period",
       "title": "Schadensmeldung Fristen",
       "text": "Behandlungsrechnungen müssen innerhalb von 12 Monaten nach Behandlung eingereicht werden. Bei verspäteter Meldung kann Erstattung gekürzt werden.",
       "source": "GDV Musterbedingungen MB/KK 2009",
@@ -95,7 +95,7 @@
       "id": "prescription_drugs_standard",
       "title": "Arzneimittel Erstattung",
       "text": "Verschreibungspflichtige Medikamente werden nach AMG (Arzneimittelgesetz) erstattet. Selbstbeteiligung oft 10% des Preises, mindestens 5€, maximal 10€ pro Medikament.",
-      "source": "BaFin Verbraucherhinweise", 
+      "source": "BaFin Verbraucherhinweise",
       "url": "https://www.bafin.de/DE/Verbraucher/versicherungen",
       "category": "coverage_scope"
     },
@@ -104,7 +104,7 @@
       "title": "Ausschluss kosmetische Eingriffe",
       "text": "Schönheitsoperationen und kosmetische Behandlungen sind standardmäßig ausgeschlossen, außer nach Unfällen oder bei medizinischer Notwendigkeit.",
       "source": "GDV Musterbedingungen MB/KK 2009",
-      "url": "https://www.gdv.de/musterbedingungen", 
+      "url": "https://www.gdv.de/musterbedingungen",
       "category": "exclusion"
     },
     {
